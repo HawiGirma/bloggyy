@@ -103,7 +103,7 @@ function Search() {
               </div>
               <input
                 type="text"
-                placeholder="Job title, skills, or company"
+                placeholder="Stories, Jokes, or Blogs"
                 className="w-full pl-10 pr-4 py-3 bg-white rounded-full border-none focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md"
               />
             </div>
