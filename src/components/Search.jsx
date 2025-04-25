@@ -1,44 +1,90 @@
-// import blog from "../assets/blog.jpg";
-// import blog1 from "../assets/blog1.jpg";
-import blog2 from "../assets/blog2.jpg";
-import blog3 from "../assets/blog3.jpg";
-import blog4 from "../assets/blog4.jpg";
-import blog5 from "../assets/blog5.jpg";
-import blog6 from "../assets/blog6.jpg";
-import blog7 from "../assets/blog7.jpg";
-
 function Search() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-rose-300 to-gray-100 text-gray-800">
-      <div className="container mx-auto px-4 py-6">
-        {/* Header */}
+    <div className="relative min-h-screen w-full bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 flex items-center justify-center overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-30">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern
+              id="wave"
+              x="0"
+              y="0"
+              width="200"
+              height="200"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M0,100 C40,80 60,120 100,100 C140,80 160,120 200,100 L200,200 L0,200 Z"
+                fill="white"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#wave)" />
+        </svg>
+      </div>
 
-        <h2 className="text-3xl font-sora font-bold mb-6">Where Next?</h2>
-        {/* Search Component */}
-        <div className="relative flex gap-1  ">
-          <div className="grid grid-cols-3 gap-5 ">
-            <div className="w-48 h-32 rounded-lg overflow-hidden">
-              <img src={blog2} className="w-full h-full object-cover" />
+      {/* Main Content */}
+      <div className="relative z-10 max-w-6xl w-full px-4 py-16 flex flex-col md:flex-row gap-8 items-center">
+        {/* Floating Cards */}
+        <div className="absolute -top-10 left-10 animate-float bg-white rounded-lg p-3 shadow-lg transform -rotate-6">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">JD</span>
             </div>
-            <div className="w-32 h-32 rounded-lg overflow-hidden">
-              <img src={blog3} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-24 h-24 rounded-lg overflow-hidden">
-              <img src={blog4} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-48 h-48 rounded-lg overflow-hidden">
-              <img src={blog2} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-32 h-32 rounded-lg overflow-hidden">
-              <img src={blog3} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-24 h-24 rounded-lg overflow-hidden">
-              <img src={blog4} className="w-full h-full object-cover" />
+            <div className="text-xs">
+              <p className="font-medium">Profile View</p>
+              <p className="text-gray-500">+15% this week</p>
             </div>
           </div>
+        </div>
 
-          <div className="mt-12 bg-white font-sora  rounded-xl p-8 shadow-lg z-20 max-w-4xl mx-auto">
-            <div className="relative">
+        <div className="absolute top-20 -right-10 animate-float-delayed bg-white rounded-lg p-3 shadow-lg transform rotate-3">
+          <div className="text-xs font-medium">Your Progress</div>
+          <div className="mt-2 flex space-x-1">
+            <div className="w-6 h-12 bg-pink-300 rounded"></div>
+            <div className="w-6 h-16 bg-pink-500 rounded"></div>
+            <div className="w-6 h-8 bg-pink-200 rounded"></div>
+          </div>
+        </div>
+
+        <div className="absolute -bottom-5 -left-5 animate-float-slow bg-white rounded-lg p-3 shadow-lg transform -rotate-3">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">MS</span>
+            </div>
+            <div className="text-xs">
+              <p className="font-medium">Product Design Manager</p>
+              <p className="text-gray-500">Microsoft • Remote</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute -bottom-10 right-20 animate-float-slower bg-white rounded-lg p-3 shadow-lg transform rotate-6">
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center">
+              <span className="text-white text-xs">GG</span>
+            </div>
+            <div className="text-xs">
+              <p className="font-medium">UX Researcher</p>
+              <p className="text-gray-500">Google • New York</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side: Main Call-To-Action */}
+        <div className="text-center md:text-left max-w-xl">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Modernizing the Job
+            <br />
+            Search Experience
+          </h1>
+          <p className="text-gray-700 mb-6">
+            Discover your next career opportunity with our AI-powered job
+            matching platform. Find roles that align with your skills and
+            aspirations.
+          </p>
+          <div className="flex flex-col md:flex-row gap-2">
+            <div className="flex-1 relative">
               <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -57,144 +103,67 @@ function Search() {
               </div>
               <input
                 type="text"
-                placeholder="Search for travel destinations or activities..."
-                className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200"
+                placeholder="Job title, skills, or company"
+                className="w-full pl-10 pr-4 py-3 bg-white rounded-full border-none focus:outline-none focus:ring-2 focus:ring-purple-500 shadow-md"
               />
             </div>
-
-            <div className="flex flex-wrap gap-2 mt-4">
-              <button className="flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M5 13l4 4L19 7"
-                  />
-                </svg>
-                Free
-              </button>
-              <button className="flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-                Paid
-              </button>
-              <button className="flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
-                  />
-                </svg>
-                Great Views
-              </button>
-              <button className="flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                  />
-                </svg>
-                Historical
-              </button>
-              <button className="flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
-                  />
-                </svg>
-                Long Hikes
-              </button>
-            </div>
-
-            <div className="mt-8">
-              <div className="flex items-center">
-                <h3 className="text-lg font-semibold">'s Choice</h3>
-                <button className="ml-2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-4 w-4"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-1 ">
-            <div className="w-16 h-16 rounded-lg overflow-hidden">
-              <img src={blog5} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-24 h-24 rounded-lg overflow-hidden">
-              <img src={blog6} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-32 h-32 rounded-lg overflow-hidden">
-              <img src={blog7} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-16 h-16 rounded-lg overflow-hidden">
-              <img src={blog5} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-24 h-24 rounded-lg overflow-hidden">
-              <img src={blog6} className="w-full h-full object-cover" />
-            </div>
-            <div className="w-32 h-32 rounded-lg overflow-hidden">
-              <img src={blog7} className="w-full h-full object-cover" />
-            </div>
+            <button className="bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-full shadow-md transition-colors duration-200">
+              Search
+            </button>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0) rotate(-6deg);
+          }
+          50% {
+            transform: translateY(-10px) rotate(-6deg);
+          }
+        }
+        @keyframes float-delayed {
+          0%,
+          100% {
+            transform: translateY(0) rotate(3deg);
+          }
+          50% {
+            transform: translateY(-15px) rotate(3deg);
+          }
+        }
+        @keyframes float-slow {
+          0%,
+          100% {
+            transform: translateY(0) rotate(-3deg);
+          }
+          50% {
+            transform: translateY(-8px) rotate(-3deg);
+          }
+        }
+        @keyframes float-slower {
+          0%,
+          100% {
+            transform: translateY(0) rotate(6deg);
+          }
+          50% {
+            transform: translateY(-12px) rotate(6deg);
+          }
+        }
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+        .animate-float-delayed {
+          animation: float-delayed 7s ease-in-out infinite;
+        }
+        .animate-float-slow {
+          animation: float-slow 8s ease-in-out infinite;
+        }
+        .animate-float-slower {
+          animation: float-slower 9s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
