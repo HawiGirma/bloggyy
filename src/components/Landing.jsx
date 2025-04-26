@@ -1,39 +1,10 @@
 import heroImage from "../assets/image-2.png"; // ✅ Use a valid variable name for the imported image
-import { ChevronRight, Menu, Play } from "lucide-react";
+import { ChevronRight, Play } from "lucide-react";
 
 export default function Landing() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-rose-300 text-gray-800 ">
       <div className="container mx-auto px-4 py-6">
-        {/* Header */}
-        <header className="flex items-center font-sora justify-between">
-          <div className="text-xl font-bold tracking-wider uppercase">
-            Bloggy
-          </div>
-
-          <nav className="hidden items-center space-x-8 md:flex">
-            <a href="#" className="text-sm hover:text-red-600">
-              Services
-            </a>
-            <a href="#" className="text-sm hover:text-red-500">
-              About
-            </a>
-            <a href="#" className="text-sm hover:text-red-600">
-              Careers
-            </a>
-            <a href="#" className="text-sm hover:text-red-600">
-              Reviews
-            </a>
-          </nav>
-
-          <div className="flex items-center space-x-6">
-            <button className="hidden text-sm uppercase md:block">
-              Contact Us
-            </button>
-            <Menu className="md:hidden" />
-          </div>
-        </header>
-
         {/* Main Content */}
         <main className="mt-12 grid grid-cols-1 items-center gap-8 md:mt-20 md:grid-cols-2">
           {/* Left Column - Hero Text */}
