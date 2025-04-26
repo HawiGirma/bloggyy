@@ -5,8 +5,10 @@ import blog3 from "../assets/blog3.jpg";
 import blog4 from "../assets/blog4.jpg";
 import blog5 from "../assets/blog5.jpg";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 function Body() {
+  const navigate = useNavigate();
   const blogPosts = [
     {
       title: "The Future of AI: Trends to Watch in 2025",
@@ -119,7 +121,12 @@ function Body() {
                 </div>
 
                 <div className="absolute bottom-4 left-4 flex items-center">
-                  <button className="bg-white bg-opacity-90 rounded-full p-2 mr-2 shadow-sm">
+                  <button
+                    className="bg-white bg-opacity-90 rounded-full p-2 mr-2 shadow-sm"
+                    onClick={() => {
+                      navigate("/detail");
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 text-pink-500"
@@ -145,7 +152,12 @@ function Body() {
                     alt={post.title}
                     className="w-full h-full object-cover"
                   />
-                  <button className="absolute top-3 right-3 bg-white rounded-full p-1.5">
+                  <button
+                    className="absolute top-3 right-3 bg-white rounded-full p-1.5"
+                    onClick={() => {
+                      navigate("/detail");
+                    }}
+                  >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4"
